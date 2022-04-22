@@ -1,0 +1,12 @@
+<%= form_with url: articles_path, html: {style: 'margin-top: 30px;'}, method: :get  do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Search", class: 'js--search btn btn-primary' %>
+<% end %>
+
+<ul id="articles">
+<% @articles.each do |article| %>
+  <li>
+    <%= article.title %>
+  </li>
+<% end %>
+</ul>
